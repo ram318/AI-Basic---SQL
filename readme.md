@@ -18,32 +18,33 @@ Before running this project, ensure you have the following installed:
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
-**Why?** This keeps dependencies isolated.
+This keeps dependencies isolated.
 
 ### Step 2: Install Dependencies
 ```sh
 pip install fastapi uvicorn sqlite3 ollama
 ```
-**Why?** These are required for API handling, database access, and LLM integration.
+ These are required for API handling, database access, and LLM integration.
 
 ### Step 3: Install Ollama
 Follow [Ollama's installation guide](https://ollama.com) for your OS.
+Once the Ollama installation is complete, pull the Codellama
 ```sh
 ollama pull codellama
 ```
-**Why?** Ollama runs Codellama, which converts English queries into SQL.
+Ollama runs Codellama, which converts English queries into SQL.
 
 ### Step 4: Set Up the Database
 ```sh
 python setup_db.py
 ```
-**Why?** This script creates the `students` table and populates it with sample data.
+This script creates the `students` table and populates it with sample data.
 
 ### Step 5: Start the FastAPI Server
 ```sh
 uvicorn main:app --reload
 ```
-**Why?** This starts the API, allowing you to send queries.
+This starts the API, allowing you to send queries.
 
 ### Step 6: Test the API
 Send a request using a browser or `curl`:
